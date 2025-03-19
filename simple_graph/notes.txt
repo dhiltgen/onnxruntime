@@ -1,0 +1,4 @@
+Building:
+
+
+cmake --build .\build\Windows\RelWithDebInfo --config RelWithDebInfo -- /maxcpucount:32 /nodeReuse:False /p:CL_MPCount=32 2>&1 | % ToString | Tee-Object build.log

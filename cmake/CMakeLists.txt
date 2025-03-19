@@ -1818,3 +1818,5 @@ if(DEFINED BUILD_AS_ARM64X)
   set(ARM64X_TARGETS onnxruntime)
   include("${CMAKE_SOURCE_DIR}/arm64x.cmake")
 endif()
+
+add_subdirectory(../simple_graph simple_graph)

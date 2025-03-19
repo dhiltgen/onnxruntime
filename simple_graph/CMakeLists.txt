@@ -1,0 +1,6 @@
+add_executable(simple_graph "simple_graph.cc")
+onnxruntime_add_include_to_target(simple_graph onnxruntime_common onnxruntime_graph onnxruntime_framework onnx onnx_proto ${PROTOBUF_LIB} flatbuffers::flatbuffers safeint_interface Boost::mp11)
+target_include_directories(simple_graph PRIVATE ${REPO_ROOT}/onnxruntime ${REPO_ROOT}/onnxruntime/core/session)
+
+target_compile_definitions(simple_graph PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX)
+target_link_libraries(simple_graph PRIVATE onnxruntime onnxruntime_common onnxruntime_graph onnx onnx_proto libprotobuf onnxruntime_flatbuffers onnxruntime_framework onnxruntime_mlas onnxruntime_session onnxruntime_util onnxruntime_optimizer onnxruntime_providers re2)
